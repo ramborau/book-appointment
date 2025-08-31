@@ -1,0 +1,55 @@
+name: whatsapp-flows-book-appointment
+services:
+- build_command: npm ci
+  environment_slug: node-js
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: ramborau/book-appointment
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  name: web
+  routes:
+  - path: /
+  run_command: npm start
+  source_dir: /
+  envs:
+  - key: NODE_ENV
+    value: production
+  - key: PORT
+    value: "3000"
+  - key: PASSPHRASE
+    value: my-secret
+  - key: PRIVATE_KEY
+    value: |
+      -----BEGIN RSA PRIVATE KEY-----
+      Proc-Type: 4,ENCRYPTED
+      DEK-Info: DES-EDE3-CBC,78446F4768C7E6C8
+
+      eLSADDf2u+PpVG0T7bThXraecDzKpyjR4tnAtUxBGTG646Zdxb5evbAy1wOh8NMp
+      tHhQ8LMRrRbLsKjjMCL8kCUo5AaB3f9ANPI6/d2hv0pYra+E8lciaij/cYkMDYPS
+      jhxZ5oOJX120tq3DKLPi8KJK0ZV4caMbMr44dzqIE4rPzMu7mm3z6pteAtq9xUcy
+      IdLS0plImSObHfjh096lR7kNP3KayLap35Y1EmaCmO0EUu2XebiPrPgwrKcLclv8
+      VdSZH5i0xAqS+FbhnVqqibXzbwxF0fWyUdBTax5OzMyqvw1U+gmn3qI/pJGgBd2+
+      cJLkRvTfOLSlbP2B86yCxE856IiQA6MN0/rPuaV5bh8aRftTun/k/ShQCsJwk6OX
+      nyToPRhpzU4e5fP+/8r3DCq0Uwlb5YuQb3uoSGprH3kL7vATM4EWn0M3k4/nm6yq
+      O7tFlnqwpOVajxsraLWKrkX5Qaqq+qjhbctrBu+uY1/OxSQ7tYSRLR9iylhsm047
+      COqiCW0lDQ8Ac1hXCcCpA1egkepAXqAAZhODGkBS+8lpoitvORV3Ta73ZZXKV7Yk
+      HFUfqzm3lTzwFJb2/IfilYmrJOav369qCogv1WPaV7HWLetckxrwUEpBPAmg+Sjp
+      9t7PquHDGcl2VmCLAAYOBm0oPLu9SirOm/YBJw+uNMdUEMAeXM4kB9Z6qFA/2oYz
+      BRNjF5m3CQvM2+XH+H/96U38afVoQdBB0PTQtlgexhO3ZrNlA6rDCyE2i+QN5u/W
+      SdE8DH5wav+zS1+2HgMUfjXVIk9a3N7fB/K2l0A/Sb0yEryAqOHgfk22xwkg7hbu
+      R5GdiQdVBjWpLxqwuKWzEyVhrCto/crEZecXuFBMFtLLpSODL4hGbWq/gjFOKmfH
+      hJ7oDvZlXC8TZvvO0kvSqU/ixybM/Lkc+kCPHKP01z7YsaLqQ3WPW47XwNKDrn1j
+      yaMaEbpQeoTRCc3xIfLlpnVAL2oe+AIV4RKchXWSw1OsNDw3TMUbkMRdIS5VsPzs
+      tHxX1oP72WySjGNx1cUzEweMctmnO9cZuzjgg7NGBYj+r5QVQLaZOb1FlcmUCwIx
+      SNbWofyzXpFgI24VXaf9F19hB1+ZHRKRrjX23S3r9rxu/IWKSw3PwyB6DBUFjgbM
+      iqsyVmM1cppGVlQHiR6+MH9eTnMZ1eEFg1wJ2w4VxUsf2kMe+pxi4JHnqNaK3isj
+      gdHofdl+w/AG2sn88GTp4EihLF2SKs7qpSYNUdQ+XBu7JVMkEVJ1vD0YnQ54eO06
+      tL7tnT4CEmVLBNaaYqw302FA26Zp31LewxDuhJLAfTkOhfhjwZQLgKYotfzXrayd
+      Ag0tZdRVvcbkaEh4urs41J+1TUOW+vGV8n3GeJPn960RD9IeZxcEV8NDY+OyotRJ
+      j5Uu09Cmi0L04GrgR73i1PuZyrHGZA0LfCpdI5P83rh933FY5pIX71X4lUiEgWBU
+      4iYg3PoU623d0FqROaActKd4iJGNeaNMiHEKN1YOVYWgBcVN0J+d4TcSZ8+QkSEe
+      4psb2O4iO+AqWzO3mjbFIzDPScvbjdpQZ1jt6wgqYo6LlRJoUOlcpv+6U1+mKF1w
+      -----END RSA PRIVATE KEY-----
